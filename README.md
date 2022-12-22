@@ -1,3 +1,18 @@
+experimental java17 backport to 2.57
+
+
+I am not familiar with the internals of FST, but luckily I have managed to merge with much of success the 2.57 version with the latest java-17 additions from 3.0.3-jdk17 branch. I do not know what bugs or side effects those moddifications might arise.
+
+So, this is an experimental backport of 3.0.3-jdk17 to 2.57. The perpose is to use the new java17 APIs to 2.x version in order not to break 2.x serialized files. Upgrading to to 3.x version breaks serialization/deserialization, 3.x files are incompatible with 2.x files. (you need to write a converter to do so).
+
+Some pull requests have been merged also. It seems to work, but since I only use it as a direct in place replacement for native serializer, I cannot test it in its full extend.
+
+Use at your own risk, test it with care on your specific project, it might work
+
+--> 257jdk17_mod1 branch
+
+
+
 fast-serialization
 ==================
 
