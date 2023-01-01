@@ -13,7 +13,19 @@
     <version>2.57mod1-jdk17</version>
     <packaging>bundle</packaging>
 
-    <description>A fast java serialization drop in-replacement and some serialization based utils such as Structs and OffHeap Memory.</description>
+    <description>A fast java serialization drop in-replacement and some serialization based utils such as Structs and OffHeap Memory.
+
+
+EXPERIMENTAL EDIT of FST 3.x java17 branch --&gt; backport to 2.57 (maven 2.57 sources, not github)
+
+I am not familiar with the internals of FST, but luckily I have managed to succesfully merge the 2.57 version with the latest java-17 additions from 3.0.3-jdk17 branch. I do not know what bugs or side effects those moddifications might arise. Actualy it is an experimental FST 3.0.3 java17 branch backport to the latest 2.x (maven sources). The perpose is to use the new java17 APIs to 2.x version in order not to break 2.x serialized files. Upgrading to to 3.x version breaks serialization/deserialization, 3.x files are incompatible with 2.x files. (you need to write a converter to do so).
+
+Some pull requests have been merged also. It seems to work, but since I only use it as a direct in place replacement for native serializer, I cannot test it in its full extend.
+
+Use at your own risk, test it carefully on your specific project, it might work!
+
+--&gt; 257jdk17_mod1 branch
+</description>
     <url>http://ruedigermoeller.github.io/fast-serialization/</url>
 
     <licenses>
