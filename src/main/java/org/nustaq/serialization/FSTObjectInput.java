@@ -15,6 +15,7 @@
  */
 package org.nustaq.serialization;
 
+import org.nustaq.logging.FSTLogger;
 import org.nustaq.serialization.coders.Unknown;
 import org.nustaq.serialization.minbin.MBObject;
 import org.nustaq.serialization.util.FSTUtil;
@@ -33,6 +34,7 @@ import java.util.*;
  */
 public class FSTObjectInput implements ObjectInput {
 
+    private static final FSTLogger logger = FSTLogger.getLogger(FSTObjectInput.class);
     public static boolean REGISTER_ENUMS_READ = false; // do not register enums on read. Flag is saver in case things brake somewhere
     public static ByteArrayInputStream emptyStream = new ByteArrayInputStream(new byte[0]);
     
@@ -773,7 +775,7 @@ public class FSTObjectInput implements ObjectInput {
             } else {
                 FSTClazzInfo.FSTFieldInfo fieldInfo = serializationInfo.getFieldInfo(name, null);
                 if (fieldInfo == null) {
-                    System.out.println("warning: unknown field: " + name + " on class " + serializationInfo.getClazz().getName());
+                    logger.log(FSTLogger.Level.WARN, "warning: unknown field: " + name + " on class " + serializationInfo.getClazz().getName(), null);
                 } else {
                     if (fieldInfo.isPrimitive()) {
                         // direct primitive field
@@ -899,10 +901,8 @@ public class FSTObjectInput implements ObjectInput {
             return null;
         }
         Class arrType = arrCl.getComponentType();
-//https://github.com/subes/fast-serialization/commit/e8da5591daa09452791dcd992ea4f83b20937be7        
-                if (arrType == null)
+        if (arrType == null)
             arrType = Object.class;
-                
         if (!arrType.isArray()) {
             Object array = Array.newInstance(arrType, len);
             if ( ! referencee.isFlat() )
@@ -999,7 +999,6 @@ public class FSTObjectInput implements ObjectInput {
         closed = true;
         resetAndClearRefs();
         conf.returnObject(objects);
-        objects = null; //https://github.com/RuedigerMoeller/fast-serialization/pull/311/files
         getCodec().close();
     }
 

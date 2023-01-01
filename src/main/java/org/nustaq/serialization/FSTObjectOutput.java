@@ -164,11 +164,9 @@ public class FSTObjectOutput implements ObjectOutput {
     public void close() throws IOException {
         flush();
         closed = true;
-//        getCodec().close(); //https://github.com/RuedigerMoeller/fast-serialization/pull/311/files
+        getCodec().close();
         resetAndClearRefs();
-        getCodec().close();//https://github.com/RuedigerMoeller/fast-serialization/pull/311/files
         conf.returnObject(objects);
-        objects = null;//https://github.com/RuedigerMoeller/fast-serialization/pull/311/files
     }
 
 

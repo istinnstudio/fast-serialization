@@ -234,7 +234,8 @@ public class FSTBytezEncoder implements FSTEncoder {
     @Override
     public void close() throws IOException {
         conf.returnObject(clnames);
-        clnames = null; // https://github.com/RuedigerMoeller/fast-serialization/pull/311/files
+        clnames.clear(); // my version
+//        clnames = null; // https://github.com/RuedigerMoeller/fast-serialization/pull/311/files
     }
 
     @Override

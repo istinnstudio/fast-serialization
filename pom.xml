@@ -9,8 +9,8 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>de.ruedigermoeller</groupId>
-    <artifactId>fst257mod1</artifactId>
-    <version>2.5.7mod1-jdk17</version>
+    <artifactId>fst2.57mod1</artifactId>
+    <version>2.57mod1-jdk17</version>
     <packaging>bundle</packaging>
 
     <description>A fast java serialization drop in-replacement and some serialization based utils such as Structs and OffHeap Memory.</description>
@@ -82,7 +82,7 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <configuration>
-                    <javadocExecutable>C:\Program Files\Java\jdk-11\bin\javadoc.exe</javadocExecutable>
+                    <javadocExecutable>C:\Program Files\Java\jdk-17\bin\javadoc.exe</javadocExecutable>
                     <additionalOptions>-Xdoclint:none</additionalOptions>
                     <additionalJOptions>
                         <additionalJOption>--add-modules</additionalJOption>
@@ -212,5 +212,5 @@
         </dependency>
 
     </dependencies>
-
+    <name>fst257mod1</name>
 </project>

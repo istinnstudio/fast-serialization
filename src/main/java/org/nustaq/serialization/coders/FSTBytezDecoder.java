@@ -387,7 +387,9 @@ public class FSTBytezDecoder  implements FSTDecoder {
     @Override
     public void close() {
         conf.returnObject(clnames);
-        clnames = null; // https://github.com/RuedigerMoeller/fast-serialization/pull/311/files
+        clnames.clear(); // my version
+       
+//        clnames = null; // https://github.com/RuedigerMoeller/fast-serialization/pull/311/files
     }
 
     @Override

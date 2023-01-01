@@ -469,9 +469,11 @@ public class FSTStreamEncoder implements FSTEncoder {
     @Override
     public void close() throws IOException {
         buffout.close();
-        clnames.clear(); // https://github.com/RuedigerMoeller/fast-serialization/pull/311/files
+        
         conf.returnObject(clnames);
-        clnames = null; // https://github.com/RuedigerMoeller/fast-serialization/pull/311/files
+//        clnames = null; // https://github.com/RuedigerMoeller/fast-serialization/pull/311/files
+clnames.clear(); // my version
+
     }
 
     @Override

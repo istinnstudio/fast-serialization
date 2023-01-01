@@ -105,7 +105,7 @@ public final class FSTClazzInfo {
     boolean flat; // never share instances of this class
     boolean isAsciiNameShortString = false;
     boolean requiresInit = false;
-   volatile boolean hasTransient; // Fix for issues 274 and 235 #311 // https://github.com/RuedigerMoeller/fast-serialization/pull/311/files
+   volatile boolean hasTransient; // Fix for issues 274 and 235 #311 // https://github.com/RuedigerMoeller/fast-serialization/pull/311/files 
     FSTObjectSerializer ser;
     FSTFieldInfo fieldInfo[]; // serializable fields
 
