@@ -1,3 +1,6 @@
+New source version in Releases: 2.57-java21 (current repository not updated)
+
+
 WHAT IS THIS:
 
 AN EXPERIMENTAL BACKPORRT OF 3.0.x FAST SERIALIZATION JDK 17 BRANCH TO 2.57 (MAVEN SOURCES)
